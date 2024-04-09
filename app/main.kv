@@ -6,6 +6,10 @@
 #: import BackBox widgets.box.BackBox
 #: import Text widgets.labels.Text
 #: import FlatField widgets.textfields.FlatField
+#: import FlatButton widgets.buttons.FlatButton
+#: import RoundedButton widgets.buttons.RoundedButton
+
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 <MainWindow>:
     orientation: 'vertical'
@@ -17,6 +21,7 @@
             size: self.size
     ScreenManager:
         id: scrn_mngr
+        transition: FadeTransition()
         Screen:
             name: 'scrn_auth'
             Auth:

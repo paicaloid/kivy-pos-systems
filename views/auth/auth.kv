@@ -49,6 +49,7 @@
         orientation: 'vertical'
         spacing: dp(12)
         BoxLayout:
+            size_hint_y: .3
             orientation: 'vertical'
             Text:
                 text: "Login"
@@ -69,28 +70,63 @@
                     halign: 'center'
                     valign: "top"
         AnchorLayout:
+            size_hint_y: .5
             BoxLayout:
                 orientation: 'vertical'
                 spacing: dp(24)
                 padding: dp(24)
                 size_hint_x: .7
                 BackBox:
+                    size_hint_y: None
+                    height: dp(64)
                     bcolor: app.color_secondary_bg
                     radius: [self.height*.1]
+                    padding: [dp(12), dp(2)]
                     FlatField:
+                        id: username
                         hint_text: 'Username'
                         hint_text_color: app.color_primary_text
                         font_size: app.fonts.size.h2
+                        multiline: False
                 BackBox:
+                    size_hint_y: None
+                    height: dp(64)
                     bcolor: app.color_secondary_bg
                     radius: [self.height*.1]
+                    padding: [dp(12), dp(2)]
                     FlatField:
-                        hint_text: 'Username'
+                        id: password
+                        hint_text: 'Password'
                         hint_text_color: app.color_primary_text
                         font_size: app.fonts.size.h2
+                        multiline: False
+                        password: True
+
                 BackBox:
+                    size_hint_y: None
+                    height: dp(64)
+                    RoundedButton:
+                        text: 'Login'
+                        font_name: app.fonts.heading
+                        font_size: app.fonts.size.h1
+                        bcolor: app.color_primary
+                        radius: [self.height*.1]
+                        on_release: root.authenticate()
+                BackBox:
+                    size_hint_y: None
+                    height: dp(64)
+                    FlatButton:
+                        text: "Don't have an account? Sign up"
+                        font_name: app.fonts.heading
+                        font_size: app.fonts.size.h1
+                        color: app.color_primary_text
+                        radius: [self.height*.1]
+                Widget:
 
-
-
-        BoxLayout:
-            orientation: 'vertical'
+        AnchorLayout:
+            size_hint_y: .2
+            padding: dp(24)
+            Text:
+                text: "Version 1.0.0"
+                font_size: app.fonts.size.h2
+                valign: 'bottom'
