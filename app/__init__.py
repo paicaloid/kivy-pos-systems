@@ -19,6 +19,7 @@ class MainApp(App):
 
     fonts = QueryDict()
     fonts.size = QueryDict()
+    fonts.size.extra = dp(48)
     fonts.size.h1 = dp(24)
     fonts.size.h2 = dp(22)
     fonts.size.h3 = dp(18)
@@ -29,6 +30,7 @@ class MainApp(App):
     fonts.heading = "assets/fonts/Inter/Inter-Bold.ttf"
     fonts.subheading = "assets/fonts/Inter/Inter-Regular.ttf"
     fonts.body = "assets/fonts/Inter/Inter-ExtraLight.ttf"
+    fonts.styled = "assets/fonts/Lobster/Lobster-Regular.ttf"
 
     def build(self):
         return MainWindow()

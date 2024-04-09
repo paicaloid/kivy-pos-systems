@@ -1,7 +1,7 @@
 #:kivy 1.0.9
 
 <Auth>:
-    BackBox:
+    BoxLayout:
         orientation: 'vertical'
         spacing: dp(24)
         padding: dp(24)
@@ -27,11 +27,12 @@
                     Text:
                         text: 'POS System'
                         font_name: app.fonts.heading
-                        font_size: sp(42)
+                        font_size: app.fonts.size.extra
                         color: app.color_primary_text
                         halign: 'center'
                         valign: 'bottom'
-                        size_hint_y: .3
+                        size_hint_y: None
+                        height: dp(54)
                     BoxLayout:
                         Label:
                             text: 'Teste de tela de login'
@@ -46,3 +47,50 @@
 
     BoxLayout:
         orientation: 'vertical'
+        spacing: dp(12)
+        BoxLayout:
+            orientation: 'vertical'
+            Text:
+                text: "Login"
+                font_name: app.fonts.styled
+                font_size: app.fonts.size.extra
+                color: app.color_primary_text
+                halign: 'center'
+                valign: 'bottom'
+
+            BoxLayout:
+                Label:
+                    text: "Enter your username and password to login"
+                    text_size: [self.parent.width, None]
+                    font_name: app.fonts.body
+                    font_size: app.fonts.size.h3
+                    size: self.texture_size
+                    color: app.color_secondary_text
+                    halign: 'center'
+                    valign: "top"
+        AnchorLayout:
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(24)
+                padding: dp(24)
+                size_hint_x: .7
+                BackBox:
+                    bcolor: app.color_secondary_bg
+                    radius: [self.height*.1]
+                    FlatField:
+                        hint_text: 'Username'
+                        hint_text_color: app.color_primary_text
+                        font_size: app.fonts.size.h2
+                BackBox:
+                    bcolor: app.color_secondary_bg
+                    radius: [self.height*.1]
+                    FlatField:
+                        hint_text: 'Username'
+                        hint_text_color: app.color_primary_text
+                        font_size: app.fonts.size.h2
+                BackBox:
+
+
+
+        BoxLayout:
+            orientation: 'vertical'
