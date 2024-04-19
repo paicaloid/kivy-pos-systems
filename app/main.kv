@@ -1,6 +1,6 @@
 #:kivy 1.0.9
 
-#: import Home views.home.Home
+#: import POS views.pos.POS
 #: import Auth views.auth.Auth
 #: import Menu views.menu.Menu
 
@@ -18,9 +18,9 @@
         id: scrn_mngr
         transition: FadeTransition()
         Screen:
-            name: "scrn_home"
-            Home:
-                id: home
+            name: "scrn_pos"
+            POS:
+                id: POS
         Screen:
             name: "scrn_menu"
             Menu:

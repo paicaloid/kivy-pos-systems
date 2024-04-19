@@ -1,0 +1,88 @@
+
+<POS>:
+	orientation: "vertical"
+	canvas.before:
+        Color:
+            rgba: [1,1,1,1]
+        Rectangle:
+            size: self.size
+            pos: self.pos
+	BoxLayout:
+		size_hint_y: .1
+		TextInput:
+			id: pd_code
+			text:"text"
+			multiline: False
+			write_tab: False
+			on_text_validate: root.foo()
+		Text:
+			text: str(root.test_qty) if root.test_qty else "1"
+	BoxLayout:
+		size_hint_y: .9
+		BoxLayout:
+			size_hint_x: .8
+			orientation: "vertical"
+			ColumnHeader:
+				size_hint_y: None
+			ScrollView:
+				GridLayout:
+					id: product_grid
+					cols: 1
+					size_hint_y: None
+					height: self.minimum_height
+					spacing: 10
+
+		BoxLayout:
+			size_hint_x: .2
+			canvas.before:
+				Color:
+					rgba: [0,0,1,1]
+				Rectangle:
+					size: self.size
+					pos: self.pos
+
+<ColumnHeader>:
+	canvas.before:
+		Color:
+			rgba: [1,0,0,1]
+		Rectangle:
+			size: self.size
+			pos: self.pos
+	Text:
+		text: "Product Code"
+		size_hint_x: .2
+	Text:
+		text: "Product Name"
+		size_hint_x: .4
+
+	Text:
+		text: "Qty"
+		size_hint_x: .2
+
+	Text:
+		text: "Price"
+		size_hint_x: .2
+
+
+<ProductTile>:
+	size_hint_y: None
+	bcolor: 1,1,1,1
+	Text:
+		text: root.product_code
+		size_hint_x: .2
+	Text:
+		text: root.product_name
+		size_hint_x: .4
+	BoxLayout:
+		size_hint_x: .2
+		FlatButton:
+			text: "-"
+			color: 0,0,1,1
+		Text:
+			text: str(root.qty)
+		FlatButton:
+			text: "+"
+			color: 0,0,1,1
+	Text:
+		text: str(round(root.price, 2))
+		size_hint_x: .2
