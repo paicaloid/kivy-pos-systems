@@ -2,6 +2,7 @@
 
 #: import Home views.home.Home
 #: import Auth views.auth.Auth
+#: import Menu views.menu.Menu
 
 #: import BackBox widgets.box.BackBox
 #: import Text widgets.labels.Text
@@ -12,21 +13,20 @@
 #: import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 <MainWindow>:
-    orientation: 'vertical'
-    canvas.before:
-        Color:
-            rgba: app.color_primary_bg
-        Rectangle:
-            pos: self.pos
-            size: self.size
+    orientation: "vertical"
     ScreenManager:
         id: scrn_mngr
         transition: FadeTransition()
         Screen:
-            name: 'scrn_auth'
-            Auth:
-                id: auth
-        Screen:
-            name: 'scrn_home'
+            name: "scrn_home"
             Home:
                 id: home
+        Screen:
+            name: "scrn_menu"
+            Menu:
+                id: menu
+        Screen:
+            name: "scrn_auth"
+            Auth:
+                id: auth
+
